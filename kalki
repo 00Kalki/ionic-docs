@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Background Color Changer</title>
+<style>
+    body {
+        text-align: center;
+        padding-top: 100px;
+    }
+    .container {
+        display: inline-block;
+        padding: 20px;
+        border: 2px solid #333;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="container" id="container">
+    <h2>Click the button to change background color</h2>
+    <button id="colorButton">Change Color</button>
+</div>
+
+<script>
+    // Function to generate a random hex color
+    function getRandomColor() {
+        return '#' + Math.floor(Math.random()*16777215).toString(16);
+    }
+
+    // Function to change the background color
+    function changeColor() {
+        var container = document.getElementById('container');
+        container.style.backgroundColor = getRandomColor();
+    }
+
+    // Event listener for the button click
+    document.getElementById('colorButton').addEventListener('click', changeColor);
+</script>
+
+</body>
+</html>
